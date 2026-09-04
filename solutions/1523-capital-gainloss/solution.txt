@@ -1,0 +1,9 @@
+import pandas as pd
+
+def capital_gainloss(stocks: pd.DataFrame) -> pd.DataFrame:
+    sells = stocks[stocks['operation'] == 'Sell'].groupby('stock_name')['price'].sum()
+    buys = stocks[stocks['operation'] == 'Buy'].groupby('stock_name')['price'].sum()
+
+    capital_gain_loss = (sells - buys).fillna(0).reset_index(name='capital_gain_loss')
+
+    return capital_gain_loss
