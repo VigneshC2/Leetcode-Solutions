@@ -34,8 +34,8 @@ jobs:
       - name: Commit and push new solutions
         if: steps.sync.outputs.new_count != '0'
         run: |
-          git config user.name "LalitNarayan824"
-          git config user.email "185046237+LalitNarayan824@users.noreply.github.com"
+          git config user.name "VigneshC2"
+          git config user.email "178643904+VigneshC2@users.noreply.github.com"
           git add solutions synced.json
           git commit -m "Sync ${{ steps.sync.outputs.new_count }} new LeetCode solution(s)"
           git push
